@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=utf-8>
+  <title>BPM adjustable twerking amogus</title>
+  <link rel="preload" as="image" href="./frame_0.gif">
+  <link rel="preload" as="image" href="./frame_1.gif">
+  <link rel="preload" as="image" href="./frame_2.gif">
+  <link rel="preload" as="image" href="./frame_3.gif">
+  <link rel="preload" as="image" href="./frame_4.gif">
+  <link rel="preload" as="image" href="./frame_5.gif">
+
+  <style>
+    @keyframes twerk {
+      0% {
+        background-image: url("./frame_0.gif");
+      }
+      16.66% {
+        background-image: url("./frame_1.gif");
+      }
+      33.33% {
+        background-image: url("./frame_2.gif");
+      }
+      50% {
+        background-image: url("./frame_3.gif");
+      }
+      66.66% {
+        background-image: url("./frame_4.gif");
+      }
+      83.33% {
+        background-image: url("./frame_5.gif");
+      }
+      100% {
+        background-image: url("./frame_0.gif");
+      }
+    }
+    #frame {
+      animation-name: twerk;
+      animation-duration: 500ms;
+      animation-iteration-count: infinite;
+      width: 600px;
+      height: 336px;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  </style>
+
+  <script>
+    window.addEventListener("load", () => {
+      const frameElement = document.querySelector("#frame");
+      const bpmElement = document.querySelector("#bpm");
+
+      bpmElement.addEventListener("change", () => {
+        const bpm = bpmElement.value;
+        const duration = 60000 / bpm;
+        frameElement.style.animationDuration = `${duration}ms`
+      });
+    });
+    
+
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h1>BPM adjustable twerking amogus</h1>
+    <div>oh nyo  (˵Φ ω Φ˵)</div>
+    <div id="frame"></div>
+    <div>
+      <label for="bpm">BPM:</label>
+      <input id="bpm" name="bpm" type="number" value="120" min="1" max="1000">
+    </div>
+    <a href="https://youtu.be/d57Jk8E6pVQ?t=7025" target="_blank">Inspiration: The Stream Where Ina Draws While Listening to Classical Music</a>
+    <a href="https://twitter.com/ScreechyAurora/status/1308164017408663552">Original gif by @ScreechyAurora</a>
+  </div>
+</body>
+</html>
